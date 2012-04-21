@@ -1,15 +1,20 @@
-
 import Globals
-import os.path
 
-skinsDir = os.path.join(os.path.dirname(__file__), 'skins')
-from Products.CMFCore.DirectoryView import registerDirectory
-if os.path.isdir(skinsDir):
-    registerDirectory(skinsDir, globals())
+from Products.ZenModel.ZenPack import ZenPack as ZenPackBase
+from Products.ZenUtils.Utils import unused
 
-import ZenPacks.DrD_Studios.BlueArc
-def initialize(registrar):
-    registrar.registerClass(
-          ClusterNode.ClusterNode,
-          permission='Add DMD Objects',
-    )
+unused(Globals)
+
+
+class ZenPack(ZenPackBase):
+    def install(self, app):
+        """Custom install method for this ZenPack."""
+        self.pre_install(app)
+        super(ZenPack, self).install(app)
+
+    def pre_install(self, app):
+        """Perform steps that should be done before default install."""
+        devices = app.zport.dmd.Devices
+
+        # /Storage device class is a prerequisite.
+        devices.createOrganizer('/Storage')

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configure xmlns="http://namespaces.zope.org/zope">
+
+    <!-- API (Info) Adapters -->
+    <adapter
+        provides=".interfaces.IClusterNodeInfo"
+        for=".ClusterNode.ClusterNode"
+        factory=".info.ClusterNodeInfo"
+        />
+
+    <include package=".browser"/>       
+
+</configure>

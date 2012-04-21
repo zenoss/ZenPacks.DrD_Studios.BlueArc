@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configure xmlns="http://namespaces.zope.org/browser">
+
+    <resourceDirectory
+        name="bluearc"
+        directory="resources"
+        />
+
+    <viewlet
+        name="js-bluearc-cluster"
+        paths="/++resource++bluearc/js/cluster.js"
+        weight="10"
+        for="ZenPacks.DrD_Studios.BlueArc.Cluster.Cluster"
+        manager="Products.ZenUI3.browser.interfaces.IJavaScriptSrcManager"
+        class="Products.ZenUI3.browser.javascript.JavaScriptSrcBundleViewlet"
+        permission="zope2.Public"
+        />
+
+</configure>
