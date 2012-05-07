@@ -5,7 +5,7 @@
 NAME = 'ZenPacks.DrD_Studios.BlueArc'
 VERSION = '1.0.1'
 AUTHOR = 'Jay Munzner / Kim Pearce'
-LICENSE = 'GPLv2'
+LICENSE = "GPLv2"
 NAMESPACE_PACKAGES = ['ZenPacks', 'ZenPacks.DrD_Studios']
 PACKAGES = ['ZenPacks', 'ZenPacks.DrD_Studios', 'ZenPacks.DrD_Studios.BlueArc']
 INSTALL_REQUIRES = []
